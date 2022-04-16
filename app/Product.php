@@ -23,8 +23,6 @@ class Product extends Model
         'created' => ProductObserver::class
     ];
 
-
-
     public function categories() : BelongsToMany
     {
         return $this->belongsToMany(Category::class);

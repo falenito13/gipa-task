@@ -17,7 +17,6 @@ class ProductObserver
      */
     public function created(Product $product)
     {
-        dd('test');
         $broadcasters = Broadcaster::select('email')->get();
         foreach($broadcasters as $broadcaster){
             Mail::to($broadcaster->email)

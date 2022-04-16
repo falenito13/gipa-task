@@ -16,7 +16,7 @@ class CreateBroadcastersTable extends Migration
         Schema::create('broadcasters', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
-            $table->string('email',255);
+            $table->string('email',255)->unique();
             $table->timestamps();
         });
     }
