@@ -21,7 +21,7 @@ class ApiController extends Controller
 
     public function searchByName($model, $query)
     {
-        return $model->select('id','name')->where('name', 'like', '%' . $query . '%')->get();
+        return $model->select('id', 'name')->where('name', 'like', '%' . $query . '%')->get();
     }
 
 }

@@ -13,11 +13,13 @@ class Category extends Model
     const SINGULAR_NAME = 'Category';
 
     protected $fillable = [
-        'name'
+        'name',
+        'product_id',
+        'category_id'
     ];
 
     public function products() : BelongsToMany
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class,'category_product','category_id','product_id');
     }
 }

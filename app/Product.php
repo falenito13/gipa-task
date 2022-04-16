@@ -14,7 +14,9 @@ class Product extends Model
     protected $fillable = [
         'name',
         'price',
-        'quantity'
+        'quantity',
+        'category_id',
+        'product_id'
     ];
 
     const SINGULAR_NAME = 'Product';
@@ -25,6 +27,6 @@ class Product extends Model
 
     public function categories() : BelongsToMany
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class,'category_product','product_id','category_id');
     }
 }
